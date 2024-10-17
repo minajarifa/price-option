@@ -1,0 +1,49 @@
+ [
+      {
+        "id": 1,
+        "priceName": "Summer Floral Dress",
+        "price": 49.99,
+        "size": ["S", "M", "L", "XL"],
+        "color": ["Red", "Yellow", "Blue"],
+        "material": "Cotton",
+        "inStock": true
+      },
+      {
+        "id": 2,
+        "priceName": "Elegant Evening Gown",
+        "price": 120.00,
+        "size": ["M", "L", "XL"],
+        "color": ["Black", "Navy Blue"],
+        "material": "Silk",
+        "inStock": false
+      },
+      {
+        "id": 3,
+        "priceName": "Casual Denim Dress",
+        "price": 65.50,
+        "size": ["S", "M", "L"],
+        "color": ["Light Blue", "Dark Blue"],
+        "material": "Denim",
+        "inStock": true
+      },
+      {
+        "id": 4,
+        "priceName": "Boho Maxi Dress",
+        "price": 80.75,
+        "size": ["S", "M", "L", "XL", "XXL"],
+        "color": ["Green", "White", "Orange"],
+        "material": "Polyester",
+        "inStock": true
+      },
+      {
+        "id": 5,
+        "priceName": "Classic Black Dress",
+        "price": 95.00,
+        "size": ["XS", "S", "M"],
+        "color": ["Black"],
+        "material": "Wool",
+        "inStock": false
+      }
+    ]
+
+  
