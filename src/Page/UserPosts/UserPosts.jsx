@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth/useAuth";
+import UserPost from "./UserPost";
 
 const UserPosts = () => {
     const{user}=useAuth();
@@ -15,6 +16,11 @@ const UserPosts = () => {
     return (
         <div>
             {posts.length}
+           <div className="grid grid-cols-3 gap-5">
+           {
+                posts.map(post=><UserPost key={post._id} post={post}></UserPost>)
+            }
+           </div>
         </div>
     );
 };
