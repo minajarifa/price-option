@@ -19,6 +19,7 @@ import PrivateRouter from './Page/PrivateRoute/PrivateRoute.jsx';
 import AllPost from './Page/AllPost/AllPost.jsx';
 import UserPosts from './Page/UserPosts/UserPosts.jsx';
 import PostDetails from './Page/AllPost/PostDetails.jsx';
+import UpdatedPost from './Page/UserPosts/UpdatedPost.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,10 +59,18 @@ const router = createBrowserRouter([
         element: 
           <AllPost />
         ,
-      },{
-        path: "/PostDetails",
+      },
+      {
+        path: "/PostDetails/:id",
         element: 
           <PostDetails />
+        ,
+        loader:({params})=>fetch(`http://localhost:5000/getPost/${params.id}`)
+      }, 
+      {
+        path: "/UpdatedPost/:id",
+        element: 
+          <UpdatedPost />
         ,
         loader:({params})=>fetch(`http://localhost:5000/getPost/${params.id}`)
       },

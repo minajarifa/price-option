@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='font-serif'>
         <Navber />
         <div className='m-10'>
           <Outlet />

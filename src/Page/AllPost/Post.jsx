@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
-    const { productName, productPhoto, price, size, color, material, inStock, useName, useEmail, usePhoto } = post;
+    const { productName, productPhoto, price,_id} = post;
     console.log(post)
     return (
         <div className='m-5 p-5'>
@@ -19,8 +20,7 @@ const Post = ({ post }) => {
                     </h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div className="card-actions justify-end">
-                        <button className="badge badge-outline">update</button>
-                        <button className="badge badge-outline">delete</button>
+                    <Link to={`/PostDetails/${_id}`} className="btn btn-outline btn-secondary">Details</Link>
                     </div>
                 </div>
             </div>

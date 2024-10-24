@@ -14,9 +14,11 @@ const Navber = () => {
             <Link className="m-2" to="/AddPost">AddPost</Link>
             <Link className="m-2" to="/UserPosts">UserPost</Link>
             <Link className="m-2" to="/AllPost">AllPost</Link>
-            <Link className="m-2" to="/Login">Login</Link>
-            <Link className="m-2" to="/Register">Register</Link>
-          
+          {
+            !user && <> <Link className="m-2" to="/Login">Login</Link>
+            <Link className="m-2" to="/Register">Register</Link></>
+          }
+
         </>
     return (
         <div>
@@ -43,7 +45,7 @@ const Navber = () => {
                             {Navigate}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Website Name</a>
+                    <a className="btn btn-ghost text-2xl">Aru Fashion</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -52,27 +54,28 @@ const Navber = () => {
                 </div>
                 <div className="navbar-end">
                     {/* profile start */}
-                    <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img
-                                    alt=""
-                                    src={user?.photoURL} />
+                    {
+                        user && <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt=""
+                                        src={user?.photoURL} />
+                                </div>
                             </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                <li>
+                                    {user?.displayName}
+                                </li>
+                                <li>
+                                    {user?.email}
+                                </li>
+                                <button onClick={() => logOut()}>Logout</button>
+                            </ul>
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li>
-                            {user?.displayName}
-                            </li>
-                            <li>
-                            {user?.email}
-                            </li>
-                            <li><a>Settings</a></li>
-                            <button onClick={() => logOut()}>Logout</button>
-                        </ul>
-                    </div>
+                    }
                     {/* profile end */}
                 </div>
             </div>
