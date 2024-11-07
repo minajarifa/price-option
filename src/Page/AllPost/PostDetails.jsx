@@ -11,10 +11,8 @@ const PostDetails = () => {
     console.log(postDetail);
     return (
         <div className="flex justify-center items-center">
-            {/*  */}
             <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
                 <img className="object-cover h-full w-full" src={productPhoto} alt="Article" />
-
                 <div className="p-6">
                     <div>
                         <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Product</span>
@@ -45,5 +43,4 @@ const PostDetails = () => {
         </div>
     );
 };
-
 export default PostDetails;

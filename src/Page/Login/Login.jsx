@@ -7,11 +7,11 @@ import Swal from 'sweetalert2'
 
 const Login = () => {
 
-    const { signIn } = useAuth();
+    const { signIn ,user} = useAuth();
     const navigate = useNavigate();
     // const location = useLocation();
 
-
+console.log(user)
     const {
         register,
         handleSubmit,
@@ -44,6 +44,7 @@ const Login = () => {
     //     const user = { pass, email };
     //     console.log('user', user);
     // }
+    {user}
 
     return (
         <div className="flex justify-center items-center">
@@ -64,6 +65,7 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
+                        {/* <legend>legend</legend> */}
                         <input {...register("password", { required: true })} type="password" placeholder="password" className="input input-bordered" />
                         {errors.password && <span className="text-red-500">This field is required</span>}
                         <label className="label">

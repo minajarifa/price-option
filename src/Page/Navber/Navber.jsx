@@ -1,24 +1,20 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth/useAuth";
 
-
 const Navber = () => {
-    const { logOut, user } = useAuth();
-    // console.log(user);
-
-
+    const { logOut, user} = useAuth();
     const Navigate =
         <>
             <Link className="m-2" to="/">Home</Link>
             <Link className="m-2" to="/LineCharts">LineCharts</Link>
             <Link className="m-2" to="/AddPost">AddPost</Link>
             <Link className="m-2" to="/UserPosts">UserPost</Link>
+            <Link className="m-2" to="/ClientPost">ClientPost</Link>
             <Link className="m-2" to="/AllPost">AllPost</Link>
-          {
-            !user && <> <Link className="m-2" to="/Login">Login</Link>
-            <Link className="m-2" to="/Register">Register</Link></>
-          }
-
+            {
+                !user && <> <Link className="m-2" to="/Login">Login</Link>
+                    <Link className="m-2" to="/Register">Register</Link></>
+            }
         </>
     return (
         <div>
@@ -45,7 +41,7 @@ const Navber = () => {
                             {Navigate}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl">Aru Fashion</a>
+                    <a className="btn btn-ghost text-2xl">Arulota Fashion</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -59,8 +55,9 @@ const Navber = () => {
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img
+                                    referrerPolicy="no-referrer"
                                         alt=""
-                                        src={user?.photoURL} />
+                                        src={user?.photoURL}/>  
                                 </div>
                             </div>
                             <ul

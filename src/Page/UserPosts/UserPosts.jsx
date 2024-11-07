@@ -15,7 +15,7 @@ const UserPosts = () => {
     },[user])
     return (
         <div>
-            {posts.length}
+         <p className="text-xl text-center p-10">  Total Number : {posts?.length}</p>
            <div className="grid grid-cols-3 gap-5">
            {
                 posts.map(post=><UserPost key={post._id} post={post}></UserPost>)

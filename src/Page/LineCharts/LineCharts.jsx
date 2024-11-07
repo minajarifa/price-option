@@ -11,11 +11,14 @@ const LineCharts = () => {
         { id: 7, name: "Student 7", math: 82 },
         { id: 8, name: "Student 8", math: 95 },
         { id: 9, name: "Student 9", math: 87 },
-        { id: 10, name: "Student 10", math: 80 }
+        { id: 10,name: "Student 10", math: 80 }
       ];
       
     return (
         <div>
+            <p className='mx-10'>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima esse placeat a dolores, molestias fuga dolorum magni qui enim neque aperiam commodi beatae quisquam ratione distinctio possimus corrupti quam, error maiores sit? Expedita nam animi cum rem debitis voluptate enim quam, possimus distinctio, voluptatem quibusdam esse autem dignissimos quasi dolorum.
+            </p>
             <LineChart width={800} height={400} data={MathMarksData}>
                 <XAxis dataKey={'math'}></XAxis>
                 <YAxis dataKey={'math'}></YAxis>

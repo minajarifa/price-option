@@ -22,6 +22,7 @@ const UserPost = ({ post }) => {
                     <div className="card-actions justify-end">
                     <Link to={`/PostDetails/${_id}`} className="btn btn-outline btn-secondary">Details</Link>
                     <Link to={`/UpdatedPost/${_id}`} className="btn btn-outline btn-secondary">Update</Link>
+                    <button className="btn btn-outline btn-secondary">Order Now</button>
                     <button className="btn btn-outline btn-secondary">delete</button>
                     </div>
                 </div>
@@ -33,4 +34,3 @@ UserPost.propTypes = {
     post: PropTypes.object
 }
 export default UserPost;
-// 

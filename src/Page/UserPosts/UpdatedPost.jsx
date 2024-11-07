@@ -1,42 +1,48 @@
-import { useLoaderData } from "react-router-dom";
+import axios from 'axios';
 // import Swal from "sweetalert2";
+import { useLoaderData } from "react-router-dom";
+import useAuth from '../../Hooks/useAuth/useAuth';
 
 
 const UpdatedPost = () => {
+    const {user}=useAuth();
+    console.log(user);
     const post = useLoaderData();
-    console.log(post);
-
-    const handleUpdatedSubmit = (event) => {
+    console.log("post",post);
+    const handleUpdatedSubmit = async (event) => {
         event.preventDefault();
         const form = event.target;
         const productName = form.productName.value;
         const productPhoto = form.productPhoto.value;
-        const price = form.productName.value;
-        const size = form.productName.value;
-        const color = form.productName.value;
-        const material = form.productName.value;
-        const inStock = form.productName.value;
+        const price = form.price.value;  
+        const size = form.size.value;
+        const color = form.color.value;
+        const material = form.material.value;
+        const inStock = form.inStock.value;
         const users = { productName, productPhoto, price, size, color, material, inStock };
-        console.log('handleAddSubmit', users)
-        fetch(`http://localhost:5000/updated`, {
-            method: "PUT",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(users)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                // if (data.acknowledged) {
-                //     Swal.fire("Data saved successfully!"); 
-                // }
-            })
-    }
+        console.log('handleAddSubmit', users);
+        // fetch(`http://localhost:5000/updated`, {
+        //     method: "PUT",
+        //     headers: { "Content-type": "application/json" },
+        //     body: JSON.stringify(users),
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //     }); 
+        try {
+            const { data } = await axios.put(`http://localhost:5000/updated/${post?._id}`,users);
+            console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
+    };
     return (
         <div>
             <div className="hero-content ">
                 <div className="card bg-base-100 w-full shadow-2xl">
                     <form
-                        onSubmit={handleUpdatedSubmit}
+                        onSubmit={()=>handleUpdatedSubmit(post._id)}
                         className="card-body">
                         <div className=" grid-cols-2">
                             <div className="form-control">

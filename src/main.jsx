@@ -20,6 +20,7 @@ import AllPost from './Page/AllPost/AllPost.jsx';
 import UserPosts from './Page/UserPosts/UserPosts.jsx';
 import PostDetails from './Page/AllPost/PostDetails.jsx';
 import UpdatedPost from './Page/UserPosts/UpdatedPost.jsx';
+import ClientPost from './Page/ClientPost/ClientPost.jsx';
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,12 @@ const router = createBrowserRouter([
         ,
       },
       {
+        path: "/ClientPost",
+        element: 
+          <ClientPost />
+        ,
+      },
+      {
         path: "/PostDetails/:id",
         element: 
           <PostDetails />
@@ -69,8 +76,10 @@ const router = createBrowserRouter([
       }, 
       {
         path: "/UpdatedPost/:id",
-        element: 
+        element: <PrivateRouter>
+
           <UpdatedPost />
+        </PrivateRouter>
         ,
         loader:({params})=>fetch(`http://localhost:5000/getPost/${params.id}`)
       },
