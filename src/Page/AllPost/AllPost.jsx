@@ -15,7 +15,7 @@ const AllPost = () => {
     return (
         <div>
             {posts.length}
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-3">
                 {
                     posts.map(post => <Post post={post} key={post._id}></Post>)
                 }

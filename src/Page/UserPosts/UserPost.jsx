@@ -5,6 +5,7 @@ const UserPost = ({ post }) => {
     const { productName, productPhoto, price,_id 
         // , size, color, material, inStock, useName, useEmail, usePhoto
     } = post;
+    console.log(post)
     return (
         <div>
             <div className="card bg-base-100 w-96 shadow-xl">
@@ -22,7 +23,7 @@ const UserPost = ({ post }) => {
                     <div className="card-actions justify-end">
                     <Link to={`/PostDetails/${_id}`} className="btn btn-outline btn-secondary">Details</Link>
                     <Link to={`/UpdatedPost/${_id}`} className="btn btn-outline btn-secondary">Update</Link>
-                    <button className="btn btn-outline btn-secondary">Order Now</button>
+                    <Link to={`/ClientPost/${_id}`} className="btn btn-outline btn-secondary">Order Now</Link>
                     <button className="btn btn-outline btn-secondary">delete</button>
                     </div>
                 </div>

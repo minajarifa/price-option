@@ -1,5 +1,6 @@
 
 
+
 const ClientPost = () => {
     return (
         <div>
@@ -8,7 +9,6 @@ const ClientPost = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                           
                             <th>Name</th>
                             <th>Job</th>
                             <th>Favorite Color</th>
@@ -49,5 +49,4 @@ const ClientPost = () => {
         </div>
     );
 };
-
 export default ClientPost;
